@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تطبيق React باستخدام CDN</title>
+    <!-- CDN لتحميل مكتبات React -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+
+        #root {
+            width: 100%;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+        }
+
+        p {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            line-height: 1.6;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            transition: transform 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 1rem;
+                padding: 1.5rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- العنصر الرئيسي لربط React -->
+    <div id="root"></div>
+    
+    <!-- سكريبت Babel لمعالجة JSX -->
+    <script type="text/babel">
+        // تعريف مكون Greeting
+        const Greeting = () => {
+            return (
+                <div className="container">
+                    <h1>مرحباً بك في تطبيق React باستخدام CDN!</h1>
+                    <p>تم تحميل هذا التطبيق بنجاح باستخدام CDN لـ React وBabel.</p>
+                </div>
+            );
+        };
+
+        // render المكون إلى DOM
+        ReactDOM.render(<Greeting />, document.getElementById('root'));
+    </script>
+</body>
+</html>
